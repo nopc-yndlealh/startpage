@@ -4,13 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="极简个人起始页 - 仿青柠起始页思路的自建实现" />
+    <style>
+      /* 移动端：关闭原生下拉刷新 + 橡皮筋回弹，避免下滑手势误触系统刷新 */
+      html, body {
+        margin: 0;
+        padding: 0;
+        overscroll-behavior-y: none;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* 应用根容器精确占满可视区：
+         - 先给 100vh 作为不支持 dvh 的旧浏览器回退；
+         - 再由 @supports 覆盖为 100dvh（动态视口，已扣除移动端地址栏高度），
+           消除上下大片系统留白。 */
+      .startpage-shell { min-height: 100vh; }
+      @supports (min-height: 100dvh) {
+        .startpage-shell { min-height: 100dvh; }
+      }
+    </style>
     <link
       rel="icon"
       type="image/svg+xml"
       href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20x='50'%20y='50'%20font-size='80'%20text-anchor='middle'%20dominant-baseline='central'%3E%F0%9F%AA%B4%3C/text%3E%3C/svg%3E"
     />
     <title>园艺起点</title>
-    <script type="module" crossorigin src="/assets/index-BmPjU8iZ.js"></script>
+    <script type="module" crossorigin src="/assets/index-CY6xD-LO.js"></script>
     <link rel="stylesheet" crossorigin href="/assets/index-DAtmHzPz.css">
     <script type="module">import.meta.url;import("_").catch(()=>1);(async function*(){})().next();if(location.protocol!="file:"){window.__vite_is_modern_browser=true}</script>
     <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy chunks, syntax error above and the same error below should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
@@ -19,6 +36,6 @@
     <div id="root"></div>
     <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
     <script nomodule crossorigin id="vite-legacy-polyfill" src="/assets/polyfills-legacy-RwCj2Qy-.js"></script>
-    <script nomodule crossorigin id="vite-legacy-entry" data-src="/assets/index-legacy-VdRTfvoz.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+    <script nomodule crossorigin id="vite-legacy-entry" data-src="/assets/index-legacy-BqSlTIPC.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
   </body>
 </html>
